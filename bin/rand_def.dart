@@ -1,5 +1,13 @@
-import 'package:rand_def/rand_def.dart' as rand_def;
+import 'package:args/args.dart';
+import 'package:rand_def/rand_def.dart';
+import 'dart:io';
 
 void main(List<String> arguments) {
-  print('Hello world: ${rand_def.calculate()}!');
+  int exitCode = 0;
+  final parser = ArgParser()
+    ..addOption('label', abbr: 'l')
+    ..addOption('sentence', abbr: 's')
+    ..addOption('name', abbr: 'n');
+
+  final argResults = parser.parse(arguments);
 }
